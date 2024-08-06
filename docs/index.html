@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nicolas Tobler | Portfolio</title>
+    <!-- <script type="text/javascript" src="/js/main.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body>
+    <div id="header">
+        <div id="header-blur">
+            <div id="header-text">
+                Nicolas Tobler | Portfolio
+            </div>
+        </div>
+    </div>
+    <div id="content">
+
+        <div class="project">
+            <h2>3D Measurement of Coil Springs</h2>
+            <h4>Project at Interdisciplinary Center for Artificial Intelligence ICAI in collaboration with Spuhl GmbH</h4>
+            <p class="abstract">
+                Spühl GmbH is the industry leader in pocket spring wire-forming machines.
+                Accurate measurements of produced coil springs are essential for quality control.
+                The ICAI developed an algorithm for fast and accurate 3D spring modeling with data from multiple cameras.
+                The project started in 2020 and has been extended for the development of an industrial prototype.
+                Details are disclosed, as a patent is pending.
+            </p>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="/res/spring.jpg">
+                    <div class="imgcaption">
+                        Fitted mathematical 3D model (colored dots) overlaid on the camera image.
+                    </div>
+                </div>
+            </div>
+            <p>
+                Coil springs must be measured accurately during production to ensure quality standards.
+                However, most geometries are very complex and are prone to deformation even with very little force applied.
+                While current measuring methods can only provide limited information about the true geometry,
+                commercially available 3D scanners are expensive and only provide incomplete output geometry.
+            </p>
+            <p>
+                In the course of this project, an alternative 3D scanning approach using cameras with non-orthographic optics has been developed and tested.
+                Multiple calibrated cameras are used to simultaneously record images of a coil spring from different perspectives.
+                Parameters of a high-dimensional mathematical model are then fitted to footage to yield a complete 3D wire path model of the spring.
+                Furthermore, artificial intelligence accelerator hardware enables parallel stochastic optimization of the coil spring model parameters,
+                which reduces computation time drastically and increases accuracy.
+            </p>
+            <p>
+                The functionality of the new measurement method has been successfully validated on demonstrator hardware.
+                The object under test is placed on a backlit glass surface where it is captured by cameras and measured within seconds.
+                A repeatable accuracy in the sub-millimeter range is achieved over a broad band of spring types and sizes.
+                The measurements are repeatable and consistent over different rotations and translations on the measurement plate.
+                The project is being pursued by Spühl GmbH for industrialization, where a prototype is in production.
+            </p>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="/res/demonstrator1.jpg">
+                    <div class="imgcaption">
+                        Initial demonstrator
+                    </div>
+                </div>
+                <div class="fig">
+                    <img src="/res/demonstrator2.jpg">
+                    <div class="imgcaption">
+                        Recent demonstrator
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="project">
+            <h2>Localization of Avalanche Transceivers</h2>
+            <h4>Master Thesis at OST Eastern Switzerland University of Applied Sciences</h4>
+            <p class="abstract">
+                Feasibility study for an extended Kalman filter based localization algorithm for 457kHz avalanche transceivers.
+                The study has been conducted on behalf of GPV Switzerland, the manufacturer of the Barryvox avalanche transceiver.
+                The results show that the novel algorithm is faster and easier to use than current implementations.
+            </p>
+            <!--
+
+            Here's a really nice demo of the project, but unfortunately this runs on Github pages, so the backend is down :(
+
+            -->
+            <!-- <div style="text-align: center;">
+                <div class="button" id="simulation-button" onclick="startBarryvox()">Check out the online simulation</div>
+            </div>
+            <div id="barryvox-filter"></div>
+            <div id="barryvox-simulation-background", onclick="terminateBarryvox()">
+                <div id="barryvox-simulation">
+                    <div id="barryvox-simulation-embed-placeholder">
+                        <div id="barryvox-simulation-loading">
+                            <div class="spinner"></div>
+                            <div>Hang on, a server-side simulation is being started just for you...</div>
+                        </div>
+                        <embed id="barryvox-simulation-embed">
+                    </div>
+                    <div class="barryvox-simulation-header-button" style="margin-left: auto;" onclick="terminateBarryvox()">close</div>
+                </div>
+            </div> -->
+            <div class="superfig">
+                <div class="fig">
+                    <img src="/res/simulation.png">
+                    <div class="imgcaption">
+                        Monte Carlo simulation of the algorithm.
+                    </div>
+                </div>
+            </div>
+            <p>
+                Backcountry skiing and snowshoe hiking are popular winter sports that involve the risk of avalanches.
+                Avalanche transceivers are often used as a fast and reliable tool to locate buried victims.
+                A quick and accurate localization of the victim is crucial to increase the chance of survival, which declines rapidly after a few minutes.
+                The device carried by the victim operates as a sender, whereas the device of the rescuer is in receiving mode.
+                Every second, a 457kHz radio pulse is emitted which is sensed by the receiver device.
+                Current solutions guide the rescuer to follow the magnetic field lines toward the sender, which is an indirect and time-consuming path.
+                Once the rescuer is close to the receiver, a sequence of predefined motions needs to be performed to precisely pinpoint the sender device.
+            </p>
+            <p>
+                This thesis suggests faster and more accurate localization techniques utilizing statistical signal processing algorithms.
+                Our work introduces two algorithms using extended Kalman filters that differ from the type of used sensors.
+                The physical model of the magnetic field is embodied in the filter to estimate the location and attitude of the sender relative to the receiver device.
+                A first simplified algorithm relies on positional data, which is difficult to obtain on a low-power handheld device.
+                The second algorithm relies only on already available sensor measurements of the Mammut Barryvox avalanche transceiver device.
+                Both proposed algorithms have been tested extensively in a Monte Carlo simulation environment.
+                The environment simulates the emitted magnetic field, randomized rescuer movement patterns, sensor inaccuracies, and noise levels.
+                Furthermore, a functioning hardware demonstrator has been built to test the algorithms in the field using live data from the Barryvox device.
+                The algorithms running on a desktop computer gather sensor data wirelessly from the hardware demonstrator.
+                The instruction outputs are then transmitted to a graphical interface for the rescuer.
+            </p>
+            <p>
+                Both proposed algorithms perform extremely well in the simulation environment.
+                The sender position estimate gets progressively more accurate during the search phase and omits the need for a pinpoint phase altogether.
+                In the simulated environment, the hardware-adapted algorithm is able to accurately locate the victim within 0.3m horizontal distance median or 0.6m distance in 90% of all simulation runs.
+                This accuracy is achieved in fewer than 70 simulated seconds.
+                The hardware demonstrator is able to confirm these results, with only a slight reduction of accuracy.
+                When following only the instructions on the graphical interface, test subjects have been able to locate the sender in 9 of 10 cases with a mean horizontal distance of 0.6m.
+            </p>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="/res/hardware.jpg">
+                    <div class="imgcaption">
+                        Hardware demonstrator consisting of the Barryvox avalanche transceiver, additional electronics and a smartphone user interface.
+                    </div>
+                </div>
+            </div>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="/res/hybrid_approach.svg">
+                    <div class="imgcaption">
+                        Flow chart of the algorithm. The internal state of the extended Kalman filter (EKF) is used as the target estimate.
+                    </div>
+                </div>
+            </div>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="/res/hardware_schematic.svg">
+                    <div class="imgcaption">
+                        Schematic of the hardware demonstrator and the computer backend.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Detection of Invasive Neophytes using Novel Artificial Intelligence Algorithms</h2>
+            <h4>Master Semester Project at OST Eastern Switzerland University of Applied Sciences</h4>
+            <p class="abstract">
+                Invaside Neophytes are a major threat to biodiversity.
+                This study suggests methods to detect neophytes from aerial images using machine learning techniques.
+            </p>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="/res/neophyte.jpg">
+                    <div class="imgcaption">
+                        Aerial image of the Entensee in RGB and multispectral bands on the left. The classification results of the superpixel and convolutional neural network approaches are shown on the right.
+                    </div>
+                </div>
+            </div>
+            <p>
+                <i>Solidago gigantea</i> is an invasive neophyte and a major threat to biodiversity.
+                Our newly developed AI algorithms make it possible to detect <i>Solidago gigantea</i> coverage from simple RGB aerial drone imagery alone.
+                As drone imagery becomes increasingly ubiquitous, techniques such as the proposed algorithms enable fast, cheap and accurate neophyte detection.
+            </p>
+            <p>
+                Our algorithms, trained with <i>Solidago</i> coverage labels are able to process orthomosaic images and output a coverage map.
+                The software is generic and hence can include additional layers, such as multispectral imagery and/or digital surface models, leading to even better results.
+                In this work, several algorithms have been developed, including a custom deep convolutional neural network and an innovative semi-supervised clustering approach.
+                The custom deep convolutional neural network is a fully convolutional architecture that gives a probability distribution output per pixel.
+                As labels are often rare, the semi-supervised approach extracts features from superpixels and clusters them in an unsupervised fashion.
+                The labels are only used to determine which unsupervised class belongs to which predefined class.
+            </p>
+            <p>
+                These results have been achieved on a single image from the Entensee in Kaltbrunn, Switzerland where <i>Solidago gigantea</i> is common.
+                In generalize these results, aerial data and <i>Solidago gigantea</i> labels have been found for the whole canton of Zürich.
+                Unfortunately, negative labels are not available, so the algorithms could not be applied.
+                To solve this problem, new one-class <i>Solidago</i> detection algorithms have been developed.
+            </p>
+            <p>
+                The results, although preliminary, clearly indicate the high effectiveness of the proposed solution for identifying <i>Solidago gigantea</i> coverage.
+                Since the algorithms perform well with RGB data alone, numerous potential applications using crowd-sourced data may emerge, utilizing variants of the proposed schemes.
+            </p>
+        </div>
+
+    </div>
+    <div id="footer">
+        <div id="footer-text">
+            &copy; Nicolas Tobler 2023
+        </div>
+    </div>
+</body>
+
+</html>
