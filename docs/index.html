@@ -19,8 +19,77 @@
     <div id="content">
 
         <div class="project">
+            <h2>Probabilistic Modelling of Debris Risk for Space Flight</h2>
+            <h4>Project at <a href="https://www.rocketlabusa.com/">Rocket Lab Ltd.</a> (2024)</h4>
+            <p class="abstract">
+                Rocket Lab is an aerospace manufacturer and small satellite launch service provider.
+                To obtain a launch license from the Federal Aviation Administration (FAA), the Flight Analysis team at Rocket Lab develops in-house tools to demonstrate that the risk of potential debris from a launch vehicle is below the required threshold.
+                The developed tool calculates high-resolution debris maps from Monte Carlo simulations of the launch vehicle trajectory to comply with the updated FAA requirements of <a href="https://www.ecfr.gov/current/title-14/chapter-III/subchapter-C/part-450" target="_blank">14 CFR Part 450</a>.
+            </p>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="res/NeutronStage2deploying.jpg">
+                    <div class="imgcaption">
+                        Neutron Launch Vehicle.
+                        <i>Image &copy; Rocket Lab. Used with permission for non-commercial purposes.</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Camera-based Star Tracker Alignment Tool for Astro Photography</h2>
+            <h4>Personal Project (2024 - 2025)</h4>
+            <p class="abstract">
+                A Raspberry Pi based image processing project facilitates the alignment of a star tracker for astro photography.
+            </p>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="res/startracker.webp">
+                    <div class="imgcaption">
+                        UI showing the camera frame overlaid on the celestial sphere with the detected stars and the estimated position of the north pole relative to the alignment axis.
+                        <i>Created by the author.</i>
+                    </div>
+                </div>
+            </div>
+            <p>
+                Astro photography requires long exposure times to capture faint objects in the night sky.
+                To compensate for the star movement during the exposure, the camera can be rotated about the Earth's axis using a star tracker.
+                On the northern hemisphere, the North Star (Polaris) can be used to precisely align the star tracker using an optical viewfinder.
+                However, on the southern hemisphere, a more sophisticated approach is required, as the South Celestial Pole lacks a bright reference star.
+            </p>
+            <p>
+                A solution using a low-noise IMX462 camera module together with a Raspberry Pi Zero 2 W has been engineered to estimate the attitude of the star tracker's alignment axis from a camera image.
+                A web application accessible through the Raspberry Pi's WiFi functionality has been developed to visualize the alignment in real-time.
+                After pre-processing the raw image, the star positions and the resulting attitude is calculated using an <a href="https://github.com/ntobler/ruststartracker">algorithm</a> proposed by <a href="https://ntrs.nasa.gov/citations/20200001376">Pedrotty et al., 2020</a> implemented in Rust and Python.
+                The tool requires only coarse initial camera calibration data, as high-confidence measurements can be used to refine the calibration parameters.
+                Furthermore, mechanical misalignment of the camera and the star tracker can be compensated for by using a simple calibration procedure.
+            </p>
+            <p>
+                With the hardware setup used, the algorithm is able to detect the attitude from star positions in a single image with a one-sigma precision of less than 0.01°.
+                The absolute accuracy has not been quantified, however, field tests have shown that the alignment is accurate enough for multiple minute exposures without visible residual star movement.
+            </p>
+            <div class="superfig">
+                <div class="fig">
+                    <img src="res/tracker.jpg">
+                    <div class="imgcaption">
+                        Custom star tracker hardware with alignment tool attached to the rotation axis.
+                        <i>Created by the author.</i>
+                    </div>
+                </div>
+                <div class="fig">
+                    <img src="res/nebula.jpg">
+                    <div class="imgcaption">
+                        Tracked 240-second exposure of the Large Magellanic Cloud (true-color) in the southern hemisphere demonstrating successful alignment.
+                        <i>Created by the author.</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
             <h2>3D Measurement of Coil Springs</h2>
-            <h4>Project at Interdisciplinary Center for Artificial Intelligence ICAI in collaboration with Spuhl GmbH</h4>
+            <h4>Project at <a href="https://ost.ch/icai">Interdisciplinary Center for Artificial Intelligence ICAI</a> in collaboration with <a href="https://spuhl.com">Spuhl GmbH</a> (2020 - 2023)</h4>
             <p class="abstract">
                 Spühl GmbH is the industry leader in pocket spring wire-forming machines.
                 Accurate measurements of produced coil springs are essential for quality control.
@@ -33,6 +102,7 @@
                     <img src="res/spring.jpg">
                     <div class="imgcaption">
                         Fitted mathematical 3D model (colored dots) overlaid on the camera image.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
             </div>
@@ -60,13 +130,15 @@
                 <div class="fig">
                     <img src="res/demonstrator1.jpg">
                     <div class="imgcaption">
-                        Initial demonstrator
+                        Initial demonstrator.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
                 <div class="fig">
                     <img src="res/demonstrator2.jpg">
                     <div class="imgcaption">
-                        Recent demonstrator
+                        Recent demonstrator.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
             </div>
@@ -75,7 +147,7 @@
 
         <div class="project">
             <h2>Localization of Avalanche Transceivers</h2>
-            <h4>Master Thesis at OST Eastern Switzerland University of Applied Sciences</h4>
+            <h4>Master Thesis at <a href="https://ost.ch">OST Eastern Switzerland University of Applied Sciences</a> (2022)</h4>
             <p class="abstract">
                 Feasibility study for an extended Kalman filter based localization algorithm for 457kHz avalanche transceivers.
                 The study has been conducted on behalf of GPV Switzerland, the manufacturer of the Barryvox avalanche transceiver.
@@ -107,6 +179,7 @@
                     <img src="res/simulation.png">
                     <div class="imgcaption">
                         Monte Carlo simulation of the algorithm.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
             </div>
@@ -144,6 +217,7 @@
                     <img src="res/hardware.jpg">
                     <div class="imgcaption">
                         Hardware demonstrator consisting of the Barryvox avalanche transceiver, additional electronics and a smartphone user interface.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
             </div>
@@ -152,6 +226,7 @@
                     <img src="res/hybrid_approach.svg">
                     <div class="imgcaption">
                         Flow chart of the algorithm. The internal state of the extended Kalman filter (EKF) is used as the target estimate.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
             </div>
@@ -160,6 +235,7 @@
                     <img src="res/hardware_schematic.svg">
                     <div class="imgcaption">
                         Schematic of the hardware demonstrator and the computer backend.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
             </div>
@@ -167,9 +243,9 @@
 
         <div class="project">
             <h2>Detection of Invasive Neophytes using Novel Artificial Intelligence Algorithms</h2>
-            <h4>Master Semester Project at OST Eastern Switzerland University of Applied Sciences</h4>
+            <h4>Master Semester Project at <a href="https://ost.ch">OST Eastern Switzerland University of Applied Sciences</a> (2021)</h4>
             <p class="abstract">
-                Invaside Neophytes are a major threat to biodiversity.
+                Invasive Neophytes are a major threat to biodiversity.
                 This study suggests methods to detect neophytes from aerial images using machine learning techniques.
             </p>
             <div class="superfig">
@@ -177,6 +253,7 @@
                     <img src="res/neophyte.jpg">
                     <div class="imgcaption">
                         Aerial image of the Entensee in RGB and multispectral bands on the left. The classification results of the superpixel and convolutional neural network approaches are shown on the right.
+                        <i>Created by the author.</i>
                     </div>
                 </div>
             </div>
@@ -186,7 +263,7 @@
                 As drone imagery becomes increasingly ubiquitous, techniques such as the proposed algorithms enable fast, cheap and accurate neophyte detection.
             </p>
             <p>
-                Our algorithms, trained with <i>Solidago</i> coverage labels are able to process orthomosaic images and output a coverage map.
+                Our algorithms, trained with <i>Solidago</i> coverage labels, are able to process orthomosaic images and output a coverage map.
                 The software is generic and hence can include additional layers, such as multispectral imagery and/or digital surface models, leading to even better results.
                 In this work, several algorithms have been developed, including a custom deep convolutional neural network and an innovative semi-supervised clustering approach.
                 The custom deep convolutional neural network is a fully convolutional architecture that gives a probability distribution output per pixel.
@@ -195,12 +272,12 @@
             </p>
             <p>
                 These results have been achieved on a single image from the Entensee in Kaltbrunn, Switzerland where <i>Solidago gigantea</i> is common.
-                In generalize these results, aerial data and <i>Solidago gigantea</i> labels have been found for the whole canton of Zürich.
+                To generalize these results, aerial data and <i>Solidago gigantea</i> labels have been found for the whole canton of Zürich.
                 Unfortunately, negative labels are not available, so the algorithms could not be applied.
                 To solve this problem, new one-class <i>Solidago</i> detection algorithms have been developed.
             </p>
             <p>
-                The results, although preliminary, clearly indicate the high effectiveness of the proposed solution for identifying <i>Solidago gigantea</i> coverage.
+                The results, although preliminary, clearly indicate the high effectiveness of the proposed solutions for identifying <i>Solidago gigantea</i> coverage.
                 Since the algorithms perform well with RGB data alone, numerous potential applications using crowd-sourced data may emerge, utilizing variants of the proposed schemes.
             </p>
         </div>
@@ -208,7 +285,7 @@
     </div>
     <div id="footer">
         <div id="footer-text">
-            &copy; Nicolas Tobler 2024
+            &copy; Nicolas Tobler, 2025
         </div>
     </div>
 </body>
