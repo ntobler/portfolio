@@ -346,3 +346,43 @@ p.abstract {
         transform: scale(0.95);
     }
 }
+
+
+.tags {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    margin: 1em 0;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.tag img {
+    width: 1em;
+    height: auto;
+    vertical-align: middle;
+    flex-shrink: 100;
+    margin-right: 0.2em;
+}
+
+.monochromize-image {
+    filter: invert(1) grayscale(1) brightness(0) contrast(100);
+  }
+
+
+.description {
+    font-size: 1.6rem;
+    margin: 1em 0;
+}
+
+.description > *:not(:first-child)::before {
+    content: "\2022";
+    margin: 0 1rem;
+}
