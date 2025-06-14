@@ -386,3 +386,16 @@ p.abstract {
     content: "\2022";
     margin: 0 1rem;
 }
+
+.blink {
+    animation: blink-color 0.75s infinite alternate;
+}
+
+@keyframes blink-color {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
